@@ -1,0 +1,30 @@
+{
+ "run_start": "2026-11-14",
+ "run_end": "2026-11-15",
+ "built": "2026-11-15",
+ "publications_searched": 3401,
+ "publications_by_list": {
+  "CBS": 572,
+  "LISS": 1986,
+  "KG-cbs": 785,
+  "KG-funded": 58
+ },
+ "pubs_referenced": 574,
+ "pubs_cited": 567,
+ "citing_documents": 1959,
+ "documents_any": 2077,
+ "precision_ok": 28,
+ "precision_n": 30,
+ "anchors_used": [
+  "CBS microdata",
+  "microdata van het CBS",
+  "Microdata Services",
+  "Remote Access omgeving",
+  "LISS panel",
+  "Longitudinal Internet Studies for the Social Sciences",
+  "ODISSEI"
+ ],
+ "records": 2539,
+ "records_with_citations": 1875,
+ "records_data_only": 664
+}

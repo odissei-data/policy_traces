@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Government Documents citing Social Science Data Infrastructure</title>
+<meta name="description" content="Search Dutch government documents that cite research and data from ODISSEI, the CBS microdata and the LISS panel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#results">Skip to results</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <p class="brand">ODISSEI</p>
+    <h1>Government Documents citing Social Science Data Infrastructure</h1>
+    <p class="lede">Parliamentary papers, attachments and official publications of the Dutch government that cite
+      research built on CBS microdata, the LISS panel or ODISSEI Grants.
+      <a href="#about">About this data</a></p>
+  </div>
+</header>
+
+<main class="wrap">
+  <form id="search-form" class="search" role="search" onsubmit="return false">
+    <label for="q">Search documents and cited publications</label>
+    <input id="q" name="q" type="search" autocomplete="off" spellcheck="false"
+      placeholder="Title, organisation, dossier number, document id, author, DOI">
+    <p class="hint">Searches document titles, organisations, dossier numbers and document ids, and the titles,
+      authors and DOIs of cited publications, and the data source (CBS microdata, LISS panel, ODISSEI Grants). Citing text is not searched.</p>
+  </form>
+
+  <div class="layout">
+    <aside class="filters" aria-label="Filters">
+      <details id="filter-panel" open>
+        <summary>Filters</summary>
+
+        <fieldset>
+          <legend>Data source</legend>
+          <div id="f-source" class="checks"></div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Matches</legend>
+          <div class="checks">
+            <label><input type="radio" name="conf" value="all" checked> Strong and probable</label>
+            <label><input type="radio" name="conf" value="strong"> Strong only</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Mentions</legend>
+          <label class="switch"><input type="checkbox" id="f-mentions">
+            Include documents that only mention data</label>
+          <p class="hint">These were found by a phrase search and not checked by reading.</p>
+        </fieldset>
+
+        <div class="field">
+          <label for="f-type">Document type</label>
+          <select id="f-type"></select>
+        </div>
+
+        <div class="field">
+          <label for="f-org">Organisation</label>
+          <select id="f-org"></select>
+        </div>
+
+        <fieldset>
+          <legend>Year</legend>
+          <div class="years">
+            <label>From <input id="f-y1" type="number" inputmode="numeric"></label>
+            <label>to <input id="f-y2" type="number" inputmode="numeric"></label>
+          </div>
+        </fieldset>
+
+        <button type="button" id="reset" class="linkish">Clear all filters</button>
+      </details>
+    </aside>
+
+    <section class="results" id="results" aria-labelledby="count">
+      <div class="toolbar">
+        <div class="tabs" role="tablist" aria-label="View">
+          <button type="button" role="tab" id="tab-docs" aria-selected="true" data-view="docs">By document</button>
+          <button type="button" role="tab" id="tab-pubs" aria-selected="false" data-view="pubs">By publication</button>
+        </div>
+        <div class="toolbar-row">
+          <p id="count" aria-live="polite" tabindex="-1">Loading…</p>
+          <div class="sortbox">
+            <label for="sort">Sort</label>
+            <select id="sort">
+              <option value="new">Date, newest first</option>
+              <option value="old">Date, oldest first</option>
+              <option value="cites">Number of citations</option>
+              <option value="rel">Relevance</option>
+            </select>
+          </div>
+          <button type="button" id="csv" class="btn">Download results as CSV</button>
+        </div>
+      </div>
+
+      <ol id="list" class="cards"></ol>
+      <nav id="pager" class="pager" aria-label="Result pages"></nav>
+    </section>
+  </div>
+
+  <section id="about" class="about" aria-labelledby="about-h">
+    <h2 id="about-h">About this data</h2>
+    <div id="about-body"><p>Loading…</p></div>
+  </section>
+</main>
+
+<footer class="site-footer"><div class="wrap" id="footer"></div></footer>
+
+<noscript><p class="wrap">This page needs JavaScript to search the data.</p></noscript>
+<script src="app.js"></script>
+</body>
+</html>
